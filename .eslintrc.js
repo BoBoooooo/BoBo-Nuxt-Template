@@ -8,6 +8,7 @@ module.exports = {
   rules: {
     "no-console": 0,
     "require-await": 0,
+    "no-unused-vars": 0,
   },
   extends: [
     "@nuxtjs",
