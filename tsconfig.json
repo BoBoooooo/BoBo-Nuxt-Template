@@ -28,7 +28,6 @@
 		"types": [
 			"@nuxt/types",
 			"@types/node",
-			"@types/dom-inputevent"
 		]
 	},
 	"exclude": [
