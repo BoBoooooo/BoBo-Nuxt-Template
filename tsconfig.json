@@ -1,36 +1,23 @@
 {
-	"compilerOptions": {
-		"target": "esnext",
-		"module": "esnext",
-		"moduleResolution": "node",
-		"lib": [
-			"esnext",
-			"esnext.asynciterable",
-			"dom"
-		],
-		"esModuleInterop": true,
-		"jsx": "preserve",
-		"experimentalDecorators": true,
-		"allowJs": true,
-		"sourceMap": true,
-		"strict": true,
-		"noImplicitAny": false,
-		"noEmit": true,
-		"baseUrl": ".",
-		"paths": {
-			"~/*": [
-				"./*"
-			],
-			"@/*": [
-				"./*"
-			]
-		},
-		"types": [
-			"@nuxt/types",
-			"@types/node",
-		]
-	},
-	"exclude": [
-		"node_modules"
-	]
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"],
+      "@/*": ["./*"]
+    },
+    "types": ["@nuxt/types", "@types/node","@types/webpack-env"]
+  },
+  "exclude": ["node_modules"]
 }

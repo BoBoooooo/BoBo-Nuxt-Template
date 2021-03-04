@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="app-container">
-      <Logo></Logo>
       <nuxt-link to="/about">跳转到about页面</nuxt-link>
     </div>
     <!-- <FormDesigner></FormDesigner> -->
@@ -11,11 +10,6 @@
 <script lang="ts">
 import { Component, Vue } from "nuxt-property-decorator";
 
-@Component({
-  components: {
-    Logo: () => import("@/components/Logo.vue"),
-  },
-})
 export default class Index extends Vue {
   // 生命周期
   created() {
