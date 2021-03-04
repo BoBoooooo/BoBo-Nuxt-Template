@@ -72,6 +72,12 @@ export default class Login extends Vue {
     password: "",
   };
 
+  created() {
+    if (this.$auth.loggedIn) {
+      this.$router.push("/");
+    }
+  }
+
   btnLoginIsLoading = false;
 
   // 获取系统名称,在字典配置-系统配置中设置标题
@@ -90,17 +96,11 @@ export default class Login extends Vue {
         this.btnLoginIsLoading = false;
         return null;
       }
-      this.$axios.post("/users/login", this.loginForm).then((res) => {
+      this.$auth.loginWith("local", { data: this.loginForm }).catch((err) => {
+        console.log(err);
         this.btnLoginIsLoading = false;
-        // 进入内部页面
-        this.$router
-          .push({
-            path: "/",
-          })
-          .catch(() => {
-            this.btnLoginIsLoading = false;
-          });
       });
+
       return null;
     });
   }

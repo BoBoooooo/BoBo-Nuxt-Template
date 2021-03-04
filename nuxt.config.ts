@@ -33,7 +33,7 @@ module.exports = {
 
   /** middleware */
   router: {
-    middleware: ["router-guards"],
+    middleware: ["auth"],
   },
 
   /*
@@ -58,9 +58,38 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ["@nuxtjs/router", "@nuxtjs/axios"],
+  modules: ["@nuxtjs/router", "@nuxtjs/axios", "@nuxtjs/auth"],
   buildModules: ["@nuxt/typescript-build"],
-
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: "/users/login",
+            method: "post",
+            propertyName: "data.token",
+          },
+          user: {
+            url: "/users/userinfo",
+            method: "post",
+            propertyName: "data",
+          },
+        },
+      },
+    },
+    redirect: {
+      login: "/login",
+      logout: "/",
+      callback: "/login",
+      home: "/",
+    },
+    cookie: {
+      options: {
+        maxAge: 60 * 60 * 24 * 7,
+      },
+    },
+    localStorage: false,
+  },
   /*
    ** Build configuration
    */
