@@ -5,19 +5,6 @@ const pkg = require("./package");
 module.exports = {
   mode: "universal",
   srcDir: "src/",
-  // typescript: {
-  //   typeCheck: {
-  //     eslint: true
-  //   }
-  // },
-  /*
-   ** Axios module configuration
-   ** See https://axios.nuxtjs.org/options
-   */
-  // axios: {
-  //   baseURL: `${blogConfig.enableHTTPS ? 'https' : 'http'}://127.0.0.1:${blogConfig.port}`,
-  //   browserBaseURL: '/'
-  // },
   /*
    ** Headers of the page
    */
@@ -58,7 +45,6 @@ module.exports = {
     },
     {
       src: "~/plugins/axios.ts",
-      mode: "server",
     },
     {
       src: "~/plugins/global.ts",

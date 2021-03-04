@@ -1,6 +1,9 @@
 import { Message } from "element-ui";
 
 export default ({ store, route, redirect, $axios }) => {
+  // 配置全局apiUrl
+  $axios.defaults.baseURL = "http://47.100.164.86:7788";
+
   $axios.onRequest((config) => {
     console.log("请求拦截器 server");
 

@@ -9,5 +9,5 @@ export const mutations = {
 };
 
 export const actions = {
-  async init({ state, commit }) {},
+  async init({ state, commit }, { $axios }) {},
 };

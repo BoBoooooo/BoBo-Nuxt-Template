@@ -90,20 +90,17 @@ export default class Login extends Vue {
         this.btnLoginIsLoading = false;
         return null;
       }
-      // this.$store
-      //   .dispatch("setTokenByLogin", this.loginForm)
-      //   .then((res) => {
-      //     this.btnLoginIsLoading = false;
-      //     // 进入内部页面
-      //     this.$router
-      //       .push({
-      //         path: "/",
-      //       })
-      //       .catch((error) => {});
-      //   })
-      //   .catch((error) => {
-      //     this.btnLoginIsLoading = false;
-      //   });
+      this.$axios.post("/users/login", this.loginForm).then((res) => {
+        this.btnLoginIsLoading = false;
+        // 进入内部页面
+        this.$router
+          .push({
+            path: "/",
+          })
+          .catch(() => {
+            this.btnLoginIsLoading = false;
+          });
+      });
       return null;
     });
   }
