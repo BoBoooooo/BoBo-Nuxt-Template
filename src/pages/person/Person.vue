@@ -7,35 +7,36 @@
 
 <template>
   <div class="page-container">
-    <CrudTable
-      ref="table"
-      table-name="person"
-      table-title="员工管理"
-      full-height
-      order-condition="timestamp desc"
-      :visible-list="{
-        btnDel: true,
-      }"
-    >
-      <template #columnFormatter="{ row, prop }">
-        <el-tag v-if="prop === 'jobno'">{{ row.jobno }}</el-tag>
-        <span v-if="prop === 'personname'"
-          ><i class="el-icon el-icon-user" style="color: red"></i
-          >{{ row.personname }}</span
-        >
-        <el-image
-          v-if="prop === 'avatar'"
-          style="width: 50px; height: 50px"
-          fit="fill"
-          :src="getAvatarUrl(row)"
-          :preview-src-list="[getAvatarUrl(row)]"
-        >
-          <div slot="error" style="height: 100%">
-            <div class="error"><i class="el-icon-picture-outline"></i></div>
-          </div>
-        </el-image>
-      </template>
-    </CrudTable>
+    <no-ssr
+      ><CrudTable
+        ref="table"
+        table-name="person"
+        table-title="员工管理"
+        full-height
+        order-condition="timestamp desc"
+        :visible-list="{
+          btnDel: true,
+        }"
+      >
+        <template #columnFormatter="{ row, prop }">
+          <el-tag v-if="prop === 'jobno'">{{ row.jobno }}</el-tag>
+          <span v-if="prop === 'personname'"
+            ><i class="el-icon el-icon-user" style="color: red"></i
+            >{{ row.personname }}</span
+          >
+          <el-image
+            v-if="prop === 'avatar'"
+            style="width: 50px; height: 50px"
+            fit="fill"
+            :src="getAvatarUrl(row)"
+            :preview-src-list="[getAvatarUrl(row)]"
+          >
+            <div slot="error" style="height: 100%">
+              <div class="error"><i class="el-icon-picture-outline"></i></div>
+            </div>
+          </el-image>
+        </template> </CrudTable
+    ></no-ssr>
   </div>
 </template>
 

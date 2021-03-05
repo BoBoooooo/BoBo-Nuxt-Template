@@ -1,9 +1,7 @@
 <template>
   <section class="app-main">
     <transition name="fade-transform" mode="out-in">
-      <no-ssr>
-        <nuxt :key="key" />
-      </no-ssr>
+      <nuxt :key="key" />
     </transition>
   </section>
 </template>

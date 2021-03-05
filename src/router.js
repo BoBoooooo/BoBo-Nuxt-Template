@@ -2,15 +2,10 @@ import Vue from "vue";
 import Router from "vue-router";
 import Login from "./pages/public/Login.vue";
 import NotFound from "./pages/public/404.vue";
-import Dept from "./pages/system/Dept.vue";
-import Role from "./pages/system/Role.vue";
-import Users from "./pages/system/Users.vue";
 
 import Person from "./pages/person/Person.vue";
 
 import FormDesignerModule from "./pages/devTools/FormDesignerModule.vue";
-import TableDesignerModule from "./pages/devTools/TableDesignerModule.vue";
-import Dict from "./pages/devTools/Dict.vue";
 
 import Dashboard from "./pages/dashboard/Dashboard.vue";
 
@@ -60,7 +55,7 @@ export const routerOptions = {
       component: FormDesignerModule,
       name: "FormDesignerModule",
       meta: {
-        title: "开发人员工具",
+        title: "表单设计器",
       },
     },
   ],

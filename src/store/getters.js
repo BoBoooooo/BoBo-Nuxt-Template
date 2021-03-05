@@ -4,6 +4,6 @@ const getters = {
   user: (state) => state.user,
   token: (state) => state.user.token,
   avatar: () =>
-    "https://wpimg.wallstcn.com/f778738c-e4f8-4870-b634-56703b4acafe.gif?imageView2/1/w/80/h/80",
+    "https://lh3.googleusercontent.com/proxy/rYITq3lywIMstBCXDjCeYfiyjcITu5ByyXVkOEO27JdvN0xaWx2ThItrDk1tDCFY7GmVt68ldtCel7j-rzbJN-nVQsmRn7NhjXCe1f8dX_x2f8A",
 };
 export default getters;

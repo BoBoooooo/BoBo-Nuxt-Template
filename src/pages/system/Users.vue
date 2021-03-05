@@ -42,60 +42,62 @@
         </div>
       </el-col>
       <el-col :span="20">
-        <CrudTable
-          ref="table"
-          table-name="users"
-          :table-title="tableTitle"
-          order-condition="timestamp desc"
-          :remote-funcs="remoteFuncs"
-          full-height
-          :prefill="tableParams"
-          :action-column-width="300"
-          :table-params="tableParams"
-          :visible-list="{
-            tableTitle: true,
-            btnDel: true,
-          }"
-        >
-          <template #columnFormatter="{ row, prop }">
-            <!-- 头像上传 -->
-            <template v-if="prop === 'photo'">
-              <el-upload
-                class="avatar-uploader"
-                :action="uploadUrl"
-                :show-file-list="false"
-                :headers="{ Authorization: getToken }"
-                :data="{
-                  userid: userid,
-                }"
-                :on-success="handleAvatarSuccess"
-                :before-upload="beforeAvatarUpload"
-              >
-                <img
-                  v-if="row.photo"
-                  :src="row.photo"
-                  class="avatar"
-                  @click="userid = row.id"
-                />
-                <i
-                  v-else
-                  class="el-icon el-icon-plus avatar-uploader-icon"
-                  @click="userid = row.id"
-                ></i>
-              </el-upload>
+        <no-ssr
+          ><CrudTable
+            ref="table"
+            table-name="users"
+            :table-title="tableTitle"
+            order-condition="timestamp desc"
+            :remote-funcs="remoteFuncs"
+            full-height
+            :prefill="tableParams"
+            :action-column-width="300"
+            :table-params="tableParams"
+            :visible-list="{
+              tableTitle: true,
+              btnDel: true,
+            }"
+          >
+            <template #columnFormatter="{ row, prop }">
+              <!-- 头像上传 -->
+              <template v-if="prop === 'photo'">
+                <el-upload
+                  class="avatar-uploader"
+                  :action="uploadUrl"
+                  :show-file-list="false"
+                  :headers="{ Authorization: getToken }"
+                  :data="{
+                    userid: userid,
+                  }"
+                  :on-success="handleAvatarSuccess"
+                  :before-upload="beforeAvatarUpload"
+                >
+                  <img
+                    v-if="row.photo"
+                    :src="row.photo"
+                    class="avatar"
+                    @click="userid = row.id"
+                  />
+                  <i
+                    v-else
+                    class="el-icon el-icon-plus avatar-uploader-icon"
+                    @click="userid = row.id"
+                  ></i>
+                </el-upload>
+              </template>
             </template>
-          </template>
-          <template #btnCustom="{ row }">
-            <el-button
-              slot="btnCustom"
-              icon="el-icon-edit-outline"
-              type="warning"
-              size="mini"
-              @click="resetPassword(row)"
-              >重置密码</el-button
-            >
-          </template>
-        </CrudTable>
+            <template #btnCustom="{ row }">
+              <el-button
+                slot="btnCustom"
+                icon="el-icon-edit-outline"
+                type="warning"
+                size="mini"
+                @click="resetPassword(row)"
+                >重置密码</el-button
+              >
+            </template>
+          </CrudTable></no-ssr
+        >
       </el-col>
     </el-row>
   </div>
