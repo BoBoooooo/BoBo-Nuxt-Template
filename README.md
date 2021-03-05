@@ -1,5 +1,11 @@
 # BoBo Nuxt Template
 
+基于NuxtJS的一套SSR模板,还在持续优化中~
+
+## Demo
+
+🍌 [Online Demo](http://server.boboooooo.top:9990)
+
 ## Build Setup
 
 ``` bash
