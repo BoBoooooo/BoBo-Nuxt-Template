@@ -60,7 +60,7 @@ module.exports = {
     },
 
     "@/plugins/svg-icon.ts",
-    "@/plugins/components",
+    "@/plugins/components.ts",
   ],
 
   /*
