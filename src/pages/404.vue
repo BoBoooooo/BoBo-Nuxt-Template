@@ -25,6 +25,7 @@ import { Component, Vue } from "nuxt-property-decorator";
 
 @Component({
   name: "NotFound",
+  layout: "empty",
 })
 export default class NotFound extends Vue {
   goLogin() {
@@ -46,6 +47,7 @@ export default class NotFound extends Vue {
     margin: 0 auto;
     margin-top: 10vh;
     font-size: 1.5em;
+    color: rgb(108, 99, 255);
   }
   .logo {
     width: 20em;

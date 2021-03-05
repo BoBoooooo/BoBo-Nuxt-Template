@@ -63,6 +63,7 @@ import { Getter } from "vuex-class";
 
 @Component({
   name: "Login",
+  layout: "empty",
 })
 export default class Login extends Vue {
   @Getter config;
@@ -73,6 +74,7 @@ export default class Login extends Vue {
   };
 
   created() {
+    console.log(this.$auth.loggedIn);
     if (this.$auth.loggedIn) {
       this.$router.push("/");
     }

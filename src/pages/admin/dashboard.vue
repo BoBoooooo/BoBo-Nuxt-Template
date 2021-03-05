@@ -1,29 +1,34 @@
 <template>
-  <section class="container">
+  <div class="container romeo">
     <div>
-      <h1 class="title">BoBo-Nuxt-SSR-Admin</h1>
-      <h2 class="subtitle">About page</h2>
+      <coreLogo />
+      <h1 class="title">nuxt-element-admin</h1>
+      <h2 class="subtitle">basic nuxtjs admin panel with element ui</h2>
       <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
+        <a href="https://nuxtjs.org/" target="_blank" class="button--green">
+          Documentation
+        </a>
         <a
           href="https://github.com/nuxt/nuxt.js"
           target="_blank"
           class="button--grey"
-          >GitHub</a
         >
+          GitHub
+        </a>
       </div>
     </div>
-  </section>
+  </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Dashboard",
+};
 </script>
 
 <style>
 .container {
+  margin: 0 auto;
   min-height: 100vh;
   display: flex;
   justify-content: center;

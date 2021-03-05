@@ -30,7 +30,7 @@ export default ({ store, route, redirect, $axios }) => {
         break;
       case 404:
         if (process.server) {
-          redirect("/login");
+          redirect("/404");
         } else {
           Message.error(error.message);
           console.log("client 404");

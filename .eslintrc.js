@@ -9,6 +9,7 @@ module.exports = {
     "no-console": 0,
     "require-await": 0,
     "no-unused-vars": 0,
+    "no-useless-catch": 0,
   },
   extends: [
     "@nuxtjs",

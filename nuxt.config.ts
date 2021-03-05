@@ -29,6 +29,7 @@ module.exports = {
   css: [
     "element-ui/lib/theme-chalk/index.css",
     // 'element-pro-crud/lib/ProCrud.css'
+    "@/assets/styles/index.scss",
   ],
 
   /** middleware */
@@ -53,6 +54,7 @@ module.exports = {
     //   src: '~/plugins/element-pro-crud.ts'
     // },
     "@/plugins/svg-icon.ts",
+    "@/plugins/components",
   ],
 
   /*
@@ -78,10 +80,8 @@ module.exports = {
       },
     },
     redirect: {
-      login: "/login",
-      logout: "/",
-      callback: "/login",
-      home: "/",
+      login: "/",
+      home: "/admin/dashboard",
     },
     cookie: {
       options: {
