@@ -10,7 +10,8 @@
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix",
-    "precommit": "npm run lint"
+    "precommit": "npm run lint",
+    "pm2": "pm2 start npm --name 'ssr' -- run start"
   },
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.2",
@@ -24,7 +25,8 @@
     "jwt-decode": "^3.1.2",
     "nprogress": "^0.2.0",
     "nuxt": "^2.0.0",
-    "path-to-regexp": "^6.2.0"
+    "path-to-regexp": "^6.2.0",
+    "pm2": "^4.5.5"
   },
   "devDependencies": {
     "@nuxt/types": "^2.15.2",

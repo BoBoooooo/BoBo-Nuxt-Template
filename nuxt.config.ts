@@ -5,6 +5,9 @@ const pkg = require("./package");
 module.exports = {
   mode: "universal",
   srcDir: "src/",
+  server: {
+    port: 9000, // default: 3000
+  },
   /*
    ** Headers of the page
    */

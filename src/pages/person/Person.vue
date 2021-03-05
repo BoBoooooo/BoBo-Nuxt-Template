@@ -48,7 +48,7 @@ import { Vue, Component } from "vue-property-decorator";
 })
 export default class Person extends Vue {
   getAvatarUrl(row) {
-    return "http://localhost:7788/" + row.avatar;
+    return "http://47.100.164.86:7788/" + row.avatar;
   }
 }
 </script>
