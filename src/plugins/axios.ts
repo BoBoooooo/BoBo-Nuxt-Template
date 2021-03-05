@@ -1,4 +1,4 @@
-import { Message } from "element-ui";
+import { Message, MessageBox } from "element-ui";
 import NProgress from "nprogress"; // 全局进度条
 
 export default ({ store, route, redirect, $axios }, inject) => {
@@ -31,11 +31,10 @@ export default ({ store, route, redirect, $axios }, inject) => {
     }
   );
 
-  $axios.onRequest((config) => {
-    console.log("请求拦截器 server");
-
-    return config;
-  });
+  // $axios.onRequest((config) => {
+  //   console.log("请求拦截器 server");
+  //   return config;
+  // });
 
   $axios.onResponse((response) => {
     if (process.client) {
@@ -47,41 +46,9 @@ export default ({ store, route, redirect, $axios }, inject) => {
 
   // 错误请求返回处理
   $axios.onError((error) => {
-    const code = parseInt(error.response && error.response.status);
-    switch (code) {
-      // 错误代码
-      case 401:
-        //         sessionStorage.clear();
-        redirect("/login");
-        break;
-      case 403:
-        //         sessionStorage.clear();
-        redirect("/login");
-        break;
-      case 404:
-        if (process.server) {
-          redirect("/404");
-        } else {
-          Message.error(error.message);
-          console.log("client 404");
-          sessionStorage.clear();
-        }
-
-        break;
-      case 500:
-        Message.error("Server exception");
-        break;
-      case 502:
-        Message.error("Bad Gateway");
-        break;
-      case 503:
-        Message.error(error.message);
-        break;
-      case 504:
-        Message.error(error.message);
-        break;
-      default:
-        break;
-    }
+    MessageBox.alert(error.message, "服务器异常", {
+      confirmButtonText: "重试",
+      type: "warning",
+    });
   });
 };

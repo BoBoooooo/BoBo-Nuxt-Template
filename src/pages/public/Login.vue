@@ -97,7 +97,9 @@ export default class Login extends Vue {
         this.btnLoginIsLoading = false;
         return null;
       }
-      this.$auth.loginWith("local", { data: this.loginForm });
+      this.$auth.loginWith("local", { data: this.loginForm }).catch(() => {
+        this.btnLoginIsLoading = false;
+      });
 
       return null;
     });
