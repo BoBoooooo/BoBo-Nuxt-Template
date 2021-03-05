@@ -41,8 +41,7 @@ export const routerOptions = {
       component: Dashboard,
       name: "dashboard",
       meta: {
-        title: "Dashboard",
-        icon: "menu",
+        title: "首页",
         affix: true,
       },
     },
@@ -51,8 +50,7 @@ export const routerOptions = {
       component: Settings,
       name: "settings",
       meta: {
-        title: "Settings",
-        icon: "setting",
+        title: "开发人员工具",
       },
     },
   ],

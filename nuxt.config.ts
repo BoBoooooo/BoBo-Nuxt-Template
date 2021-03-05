@@ -27,8 +27,8 @@ module.exports = {
    ** Global CSS
    */
   css: [
+    "element-pro-crud/lib/ProCrud.css",
     "element-ui/lib/theme-chalk/index.css",
-    // 'element-pro-crud/lib/ProCrud.css'
     "@/assets/styles/index.scss",
   ],
 
@@ -42,6 +42,10 @@ module.exports = {
    */
   plugins: [
     {
+      src: "~/plugins/element-pro-crud.ts",
+      mode: "client",
+    },
+    {
       src: "~/plugins/element-ui.ts",
     },
     {
@@ -50,9 +54,7 @@ module.exports = {
     {
       src: "~/plugins/global.ts",
     },
-    // {
-    //   src: '~/plugins/element-pro-crud.ts'
-    // },
+
     "@/plugins/svg-icon.ts",
     "@/plugins/components",
   ],

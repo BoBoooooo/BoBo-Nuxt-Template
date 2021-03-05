@@ -6,21 +6,14 @@
       :index="item.name"
       :route="{ path: item.path }"
     >
-      <i
-        v-if="item.meta && item.meta.icon"
-        :class="`el-icon-` + item.meta.icon"
-        class="icon"
-      ></i>
+      <svg-icon class="icon" :icon-class="item.meta.title"></svg-icon>
       <span slot="title">{{ item.meta.title }}</span>
     </el-menu-item>
 
     <el-submenu v-else :index="item.name">
       <template slot="title">
-        <i
-          v-if="item.meta && item.meta.icon"
-          :class="`el-icon-` + item.meta.icon"
-          class="icon"
-        ></i>
+        <svg-icon class="icon" :icon-class="item.meta.title"></svg-icon>
+
         <span slot="title">{{ item.meta.title }}</span>
       </template>
       <el-menu-item

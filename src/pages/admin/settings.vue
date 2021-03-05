@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <h1>settings</h1>
+  <div class="page-container">
+    <FormDesigner></FormDesigner>
   </div>
 </template>
 <script>
