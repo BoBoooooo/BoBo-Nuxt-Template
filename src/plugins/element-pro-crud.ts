@@ -6,11 +6,10 @@
  */
 import Vue from "vue";
 import ElementProCrud from "element-pro-crud";
-// import { crud } from '@/api/public/crud';
-// import * as pluginsApi from '@/api/system/form';
-console.log(ElementProCrud);
+import { crud } from "@/api/public/crud";
+import * as pluginsApi from "@/api/system/form";
 const $PROCRUD_OPTION = {
-  // ...pluginsApi,
-  // crud,
+  ...pluginsApi,
+  crud,
 };
 Vue.use(ElementProCrud, $PROCRUD_OPTION);

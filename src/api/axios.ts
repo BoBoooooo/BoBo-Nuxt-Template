@@ -8,7 +8,10 @@ import axios from "axios";
 import { Message, MessageBox } from 'element-ui';// eslint-disable-line
 import NProgress from "nprogress"; // 全局进度条
 import "nprogress/nprogress.css"; // Progress 进度条样式
-import store from "../store";
+import Cookies from "js-cookie";
+import Vue from "vue";
+
+const store = Vue.prototype.$store;
 
 NProgress.configure({ showSpinner: false });
 
@@ -17,7 +20,7 @@ NProgress.configure({ showSpinner: false });
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: window.__HOST__URL__ + window.__PREFIX__URL__, // 后端接口根路径
+  baseURL: "http://localhost:7788", // 后端接口根路径
   timeout: 60 * 1000, // 请求超时时间
 });
 
@@ -25,10 +28,15 @@ const service = axios.create({
 service.interceptors.request.use(
   (config) => {
     // 全局进度条loading
-    NProgress.start();
-    if (store.getters.token && store.getters.token !== "null") {
+    if (process.client) {
+      NProgress.start();
+    }
+    if (
+      Cookies.get("auth._token.local") &&
+      Cookies.get("auth._token.local") !== "null"
+    ) {
       // 让每个请求携带自定义token
-      config.headers.Authorization = store.getters.token;
+      config.headers.Authorization = Cookies.get("auth._token.local");
     }
     return config;
   },
@@ -49,7 +57,9 @@ service.interceptors.response.use(
     const res = response.data;
     const { message, code } = res;
 
-    NProgress.done();
+    if (process.client) {
+      NProgress.done();
+    }
     // 600表示token异常需要重新登录
     if (code === 600) {
       Message({

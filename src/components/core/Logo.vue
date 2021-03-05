@@ -29,9 +29,8 @@ export default {
   },
   data() {
     return {
-      title: "Nuxt Admin Template",
-      logo:
-        "https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png",
+      title: "BoBo Nuxt Template",
+      logo: require("@/assets/logo.png"),
     };
   },
 };
@@ -49,8 +48,8 @@ export default {
   position: relative;
   width: 100%;
   height: 50px;
-  line-height: 50px;
-  background: #1f3b27;
+  line-height: 60px;
+  background: rgb(40, 44, 52);
   text-align: center;
   overflow: hidden;
   & .sidebar-logo-link {
@@ -59,6 +58,7 @@ export default {
     & .sidebar-logo {
       width: 32px;
       height: 32px;
+      border-radius: 50%;
       vertical-align: middle;
       margin-right: 12px;
     }
@@ -67,7 +67,7 @@ export default {
       margin: 0;
       color: #fff;
       font-weight: 600;
-      line-height: 50px;
+      line-height: 60px;
       font-size: 14px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;

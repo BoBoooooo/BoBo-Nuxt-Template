@@ -1,10 +1,18 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Index from "./pages/index";
-import Dashboard from "./pages/admin/dashboard";
-import Admin from "./pages/admin";
-import Settings from "./pages/admin/settings";
-import NotFound from "./pages/404";
+import Login from "./pages/public/Login.vue";
+import NotFound from "./pages/public/404.vue";
+import Dept from "./pages/system/Dept.vue";
+import Role from "./pages/system/Role.vue";
+import Users from "./pages/system/Users.vue";
+
+import Person from "./pages/person/Person.vue";
+
+import FormDesignerModule from "./pages/devTools/FormDesignerModule.vue";
+import TableDesignerModule from "./pages/devTools/TableDesignerModule.vue";
+import Dict from "./pages/devTools/Dict.vue";
+
+import Dashboard from "./pages/dashboard/Dashboard.vue";
 
 const emptyFn = () => {};
 const originalPush = Router.prototype.push;
@@ -19,8 +27,8 @@ export const routerOptions = {
   base: decodeURI("/"),
   routes: [
     {
-      path: "/",
-      component: Index,
+      path: "/login",
+      component: Login,
       name: "index",
       hidden: true,
     },
@@ -31,24 +39,26 @@ export const routerOptions = {
       hidden: true,
     },
     {
-      path: "/admin",
-      component: Admin,
-      name: "admin",
-      hidden: true,
-    },
-    {
-      path: "/admin/dashboard",
+      path: "/dashboard",
       component: Dashboard,
-      name: "dashboard",
+      name: "Dashboard",
       meta: {
         title: "首页",
         affix: true,
       },
     },
     {
-      path: "/admin/settings",
-      component: Settings,
-      name: "settings",
+      path: "/person",
+      component: Person,
+      name: "Person",
+      meta: {
+        title: "员工管理",
+      },
+    },
+    {
+      path: "/form-designer",
+      component: FormDesignerModule,
+      name: "FormDesignerModule",
       meta: {
         title: "开发人员工具",
       },

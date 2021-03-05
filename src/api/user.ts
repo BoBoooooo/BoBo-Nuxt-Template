@@ -4,7 +4,7 @@
  * @copyright BoBo
  * @createDate 2018年11月13日20:27:16
  */
-import axios from "@/plugins/axios-normal";
+import axios from "./axios";
 // const axios = Vue.prototype.$axios;
 // 用户登录
 export function login(userInfo): any {

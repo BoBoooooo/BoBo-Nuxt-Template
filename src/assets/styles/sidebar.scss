@@ -1,10 +1,15 @@
 #app {
 
   .main-container {
-    min-height: 100%;
+    background: #f0f3f7;
+    margin-left: 220px;
+    padding: 20px;
+    overflow: auto;
+    box-sizing: border-box;
+    height: calc(100vh - 60px);
+    margin-top: 60px;
     transition: margin-left .28s;
     margin-left: $sideBarWidth;
-    position: relative;
   }
 
   .sidebar-container {

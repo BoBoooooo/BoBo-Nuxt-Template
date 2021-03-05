@@ -6,11 +6,11 @@
         class="drawer-bg"
         @click="handleClickOutside"
       />
+      <coreHeader />
+
       <coreDrawer class="sidebar-container" />
+
       <div class="main-container">
-        <div :class="{ 'fixed-header': fixedHeader }">
-          <coreHeader />
-        </div>
         <coreMain />
       </div>
     </div>

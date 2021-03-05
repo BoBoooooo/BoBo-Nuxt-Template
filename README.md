@@ -1,4 +1,4 @@
-# BoBo-Nuxt-SSR-Admin
+# BoBo Nuxt Template
 
 ## Build Setup
 

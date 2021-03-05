@@ -5,8 +5,8 @@
       <el-menu
         :default-active="activeRoute"
         :collapse="isCollapse"
-        background-color="#305635"
-        text-color="#bfcbd9"
+        background-color="rgb(40, 44, 52)"
+        text-color="#fff"
         :unique-opened="false"
         active-text-color="rgb(97, 209, 74)"
         :collapse-transition="false"
