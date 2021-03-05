@@ -7,8 +7,8 @@
 
 <template>
   <div class="page-container">
-    <no-ssr
-      ><CrudTable
+    <no-ssr>
+      <CrudTable
         ref="table"
         table-name="person"
         table-title="员工管理"
@@ -35,8 +35,9 @@
               <div class="error"><i class="el-icon-picture-outline"></i></div>
             </div>
           </el-image>
-        </template> </CrudTable
-    ></no-ssr>
+        </template>
+      </CrudTable>
+    </no-ssr>
   </div>
 </template>
 
