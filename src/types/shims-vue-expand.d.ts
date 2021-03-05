@@ -22,6 +22,7 @@ declare module 'vue/types/vue' {
     HOST_URL: any;
     API_URL: any;
     CHAT_URL: any;
+    nprogress: any;
   }
 }
 

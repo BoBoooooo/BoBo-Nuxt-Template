@@ -14,11 +14,6 @@
           <img :src="avatar" class="user-avatar" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <el-dropdown-item>
-            <span style="display: block">{{
-              auth ? auth.email : "admin"
-            }}</span>
-          </el-dropdown-item>
           <router-link to="/" divided>
             <el-dropdown-item> Home </el-dropdown-item>
           </router-link>
@@ -41,15 +36,14 @@
 import { mapGetters } from "vuex";
 export default {
   computed: {
-    ...mapGetters(["sidebar", "avatar", "auth"]),
+    ...mapGetters(["sidebar", "avatar"]),
   },
   methods: {
     toggleSideBar() {
       this.$store.dispatch("app/toggleSideBar");
     },
     async logout() {
-      await this.$store.dispatch("auth/logout");
-      this.$router.push(`/`);
+      this.$auth.logout();
     },
   },
 };

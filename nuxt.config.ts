@@ -62,6 +62,9 @@ module.exports = {
    */
   modules: ["@nuxtjs/router", "@nuxtjs/axios", "@nuxtjs/auth"],
   buildModules: ["@nuxt/typescript-build"],
+  /*
+   ** Build configuration
+   */
   auth: {
     strategies: {
       local: {
@@ -76,12 +79,14 @@ module.exports = {
             method: "post",
             propertyName: "data",
           },
+          logout: false,
         },
       },
     },
     redirect: {
       login: "/",
-      home: "/admin/dashboard",
+      logout: "/",
+      home: "/admin",
     },
     cookie: {
       options: {
@@ -90,9 +95,6 @@ module.exports = {
     },
     localStorage: false,
   },
-  /*
-   ** Build configuration
-   */
 
   build: {
     extractCSS: true,

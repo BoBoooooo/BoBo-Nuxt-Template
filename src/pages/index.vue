@@ -74,9 +74,8 @@ export default class Login extends Vue {
   };
 
   created() {
-    console.log(this.$auth.loggedIn);
     if (this.$auth.loggedIn) {
-      this.$router.push("/");
+      this.$router.push("/admin");
     }
   }
 
@@ -98,10 +97,15 @@ export default class Login extends Vue {
         this.btnLoginIsLoading = false;
         return null;
       }
-      this.$auth.loginWith("local", { data: this.loginForm }).catch((err) => {
-        console.log(err);
-        this.btnLoginIsLoading = false;
-      });
+      // this.$store
+      //   .dispatch("user/setTokenByLogin", this.loginForm)
+      //   .then(() => {
+      //     this.$router.push("/admin");
+      //   })
+      //   .catch(() => {
+      //     this.btnLoginIsLoading = false;
+      //   });
+      this.$auth.loginWith("local", { data: this.loginForm });
 
       return null;
     });
