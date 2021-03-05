@@ -75,7 +75,7 @@ export default class Login extends Vue {
 
   created() {
     if (this.$auth.loggedIn) {
-      this.$router.push("/dashboard");
+      this.$router.push("/");
     }
   }
 

@@ -34,7 +34,7 @@ export const routerOptions = {
       hidden: true,
     },
     {
-      path: "/dashboard",
+      path: "/",
       component: Dashboard,
       name: "Dashboard",
       meta: {

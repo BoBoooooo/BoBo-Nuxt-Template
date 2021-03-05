@@ -89,7 +89,7 @@ module.exports = {
     redirect: {
       login: "/login",
       logout: "/login",
-      home: "/dashboard",
+      home: "/",
     },
     cookie: {
       options: {
