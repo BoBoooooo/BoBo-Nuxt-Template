@@ -3,7 +3,7 @@ import NProgress from "nprogress"; // 全局进度条
 
 export default ({ store, route, redirect, $axios }, inject) => {
   // 配置全局apiUrl
-  $axios.defaults.baseURL = "http://47.100.164.86:7788";
+  $axios.defaults.baseURL = "http://localhost:7788";
 
   // 拦截请求
   $axios.interceptors.request.use(

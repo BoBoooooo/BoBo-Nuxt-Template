@@ -20,7 +20,7 @@ NProgress.configure({ showSpinner: false });
 
 // 创建axios实例
 const service = axios.create({
-  baseURL: "http://47.100.164.86:7788", // 后端接口根路径
+  baseURL: "http://localhost:7788", // 后端接口根路径
   timeout: 60 * 1000, // 请求超时时间
 });
 
