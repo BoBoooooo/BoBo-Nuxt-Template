@@ -65,7 +65,8 @@ module.exports = {
   modules: ["@nuxtjs/router", "@nuxtjs/axios", "@nuxtjs/auth"],
   buildModules: ["@nuxt/typescript-build"],
   /*
-   ** Build configuration
+   * Auth configuration
+   * https://auth.nuxtjs.org/
    */
   auth: {
     strategies: {
@@ -86,9 +87,9 @@ module.exports = {
       },
     },
     redirect: {
-      login: "/",
-      logout: "/",
-      home: "/admin",
+      login: "/login",
+      logout: "/login",
+      home: "/dashboard",
     },
     cookie: {
       options: {

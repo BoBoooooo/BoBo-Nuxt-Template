@@ -19,7 +19,7 @@
           <img :src="avatar" class="user-avatar" />
         </div>
         <el-dropdown-menu slot="dropdown" class="user-dropdown">
-          <el-dropdown-item divided>
+          <el-dropdown-item>
             <span style="display: block" @click="logout">退出</span>
           </el-dropdown-item>
         </el-dropdown-menu>
