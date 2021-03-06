@@ -26,6 +26,8 @@
 <script>
 import { mapGetters } from "vuex";
 import variables from "@/assets/styles/variables.scss";
+import filterAsyncRouter from "@/permission";
+
 export default {
   data() {
     return {
@@ -33,8 +35,14 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["sidebar"]),
+    ...mapGetters(["sidebar", "user"]),
     routes() {
+      if (this.user) {
+        return filterAsyncRouter(
+          this.$router.options.routes,
+          this.user.roleAuthName.split(",")
+        );
+      }
       return this.$router.options.routes;
     },
     showLogo() {
