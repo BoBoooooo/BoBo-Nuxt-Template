@@ -3,7 +3,6 @@ const getters = {
   device: (state) => state.app.device,
   user: (state) => state.auth.user,
   token: (state) => state.user.token,
-  avatar: () =>
-    "https://lh3.googleusercontent.com/proxy/rYITq3lywIMstBCXDjCeYfiyjcITu5ByyXVkOEO27JdvN0xaWx2ThItrDk1tDCFY7GmVt68ldtCel7j-rzbJN-nVQsmRn7NhjXCe1f8dX_x2f8A",
+  avatar: () => "https://img.imgdb.cn/item/60445435cef1ec5e6fa6a939.gif",
 };
 export default getters;
