@@ -3,7 +3,6 @@ const { resolve } = require("path");
 const pkg = require("./package");
 
 module.exports = {
-  mode: "universal",
   srcDir: "src/",
   server: {
     port: 9990, // default: 3000
@@ -107,7 +106,6 @@ module.exports = {
   },
   build: {
     extractCSS: true,
-    vendor: ["element-ui"],
     babel: {
       plugins: [
         [
@@ -151,7 +149,7 @@ module.exports = {
           },
           {
             test: /\.ts$/,
-            exclude: [/node_modules/, /vendor/, /\.nuxt/],
+            exclude: [/node_modules/, /\.nuxt/],
             loader: "ts-loader",
             options: {
               appendTsSuffixTo: [/\.vue$/],
