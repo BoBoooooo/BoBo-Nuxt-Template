@@ -6,7 +6,7 @@ module.exports = {
   mode: "universal",
   srcDir: "src/",
   server: {
-    port: 9000, // default: 3000
+    port: 9990, // default: 3000
     host: "0.0.0.0",
   },
   /*
