@@ -5,8 +5,8 @@
   "author": "BoBo <boboooooo159@gmail.com>",
   "private": true,
   "scripts": {
-    "dev": "nuxt-ts",
-    "build": "nuxt-ts build",
+    "dev": "cross-env BASE_URL=http://localhost:7788 nuxt-ts",
+    "build": "cross-env BASE_URL=http://47.100.164.86:7788 nuxt-ts build",
     "start": "nuxt-ts start",
     "generate": "nuxt-ts generate",
     "lint": "eslint --ext .ts,.js,.vue --ignore-path .gitignore . --fix",
@@ -36,6 +36,7 @@
     "@types/webpack-env": "^1.16.0",
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "babel-plugin-component": "^1.1.1",
+    "cross-env": "^5.2.1",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "8.1.0",
     "eslint-loader": "^4.0.2",

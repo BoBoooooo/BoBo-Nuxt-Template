@@ -102,7 +102,9 @@ module.exports = {
     },
     localStorage: false,
   },
-
+  env: {
+    BASE_URL: process.env.BASE_URL,
+  },
   build: {
     extractCSS: true,
     vendor: ["element-ui"],
