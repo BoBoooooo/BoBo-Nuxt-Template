@@ -32,6 +32,7 @@ module.exports = {
   css: [
     "element-pro-crud/lib/ProCrud.css",
     "element-ui/lib/theme-chalk/index.css",
+    "@/assets/styles/element-variables.scss",
     "@/assets/styles/index.scss",
   ],
 
