@@ -89,10 +89,13 @@ service.interceptors.response.use(
       NProgress.done();
       // http状态码200以外的情况
       // 请检查网络链接或联系管理员
-      MessageBox.alert(error.response.data.message, "服务器异常", {
-        confirmButtonText: "重试",
-        type: "warning",
-      });
+      // 如果token超时服务器返回401,@nuxt/auth内部自动重定向到登录页不需要提示
+      if (error.response.data.code !== 401) {
+        MessageBox.alert(error.response.data.message, "服务器异常", {
+          confirmButtonText: "重试",
+          type: "warning",
+        });
+      }
     }
 
     return Promise.reject(error);

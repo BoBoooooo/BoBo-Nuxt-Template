@@ -46,9 +46,12 @@ export default ({ store, route, redirect, $axios }) => {
 
   // 错误请求返回处理
   $axios.onError((error) => {
-    MessageBox.alert(error.message, "服务器异常", {
-      confirmButtonText: "重试",
-      type: "warning",
-    });
+    // 如果token超时服务器返回401,@nuxt/auth内部自动重定向到登录页不需要提示
+    if (error.code !== 401) {
+      MessageBox.alert(error.message, "服务器异常", {
+        confirmButtonText: "重试",
+        type: "warning",
+      });
+    }
   });
 };
