@@ -42,7 +42,7 @@
         </div>
       </el-col>
       <el-col :span="20">
-        <no-ssr
+        <client-only
           ><CrudTable
             ref="table"
             table-name="users"
@@ -96,7 +96,7 @@
                 >重置密码</el-button
               >
             </template>
-          </CrudTable></no-ssr
+          </CrudTable></client-only
         >
       </el-col>
     </el-row>

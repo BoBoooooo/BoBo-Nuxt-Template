@@ -6,7 +6,7 @@
 -->
 <template>
   <div class="page-container">
-    <no-ssr>
+    <client-only>
       <CrudTable
         ref="table"
         table-name="form"
@@ -29,7 +29,7 @@
           >
         </template>
       </CrudTable>
-    </no-ssr>
+    </client-only>
     <el-dialog
       v-if="visible"
       ref="dialog"

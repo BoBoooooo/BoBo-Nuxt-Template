@@ -7,7 +7,7 @@
 
 <template>
   <div class="page-container">
-    <no-ssr>
+    <client-only>
       <CrudTable
         ref="table"
         table-name="person"
@@ -37,7 +37,7 @@
           </el-image>
         </template>
       </CrudTable>
-    </no-ssr>
+    </client-only>
   </div>
 </template>
 

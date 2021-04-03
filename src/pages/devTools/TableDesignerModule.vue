@@ -6,7 +6,7 @@
 -->
 <template>
   <div class="page-container">
-    <no-ssr>
+    <client-only>
       <CrudTable
         ref="dynamictables"
         table-name="dynamictables"
@@ -29,7 +29,7 @@
           >
         </template>
       </CrudTable>
-    </no-ssr>
+    </client-only>
     <!-- 对话框 -->
     <el-dialog
       v-if="visible"

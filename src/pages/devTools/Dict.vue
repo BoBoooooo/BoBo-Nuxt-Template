@@ -53,7 +53,7 @@
         </el-tree>
       </el-col>
       <el-col :span="19">
-        <no-ssr>
+        <client-only>
           <CrudTable
             ref="codeListTable"
             table-name="ad_codelist"
@@ -67,7 +67,7 @@
             }"
           >
           </CrudTable>
-        </no-ssr>
+        </client-only>
       </el-col>
     </el-row>
     <el-dialog
